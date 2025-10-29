@@ -1,38 +1,1134 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+:root {
+    --toastify-color-success: #137caa;
+    --toastify-color-error: #ea9a27;
+    --toastify-color-light: #ffebcc;
+    --toastify-color-dark: #8c7257;
+    --toastify-font-family: "Titillium Web", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    box-sizing: border-box;
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background-color: #282828;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.contenedor-del-inicio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.contenedor-del-formulario {
+    display: flex;
+    justify-content: center;
+    height: 80%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.formulario {
+    border-radius: 10px;
+    background-color: #636363;
+    width: 50%;
+    box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.61);
+    -webkit-box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.61);
+}
+
+.imagen-logo {
+    width: 40%;
+}
+
+.header-form {
+    display: flex;
+    justify-content: center;
+}
+
+.body-form {
+    margin: 0 auto;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 3rem;
+}
+
+#usuario,
+#contraseña {
+    border: none;
+    border-radius: 8px;
+    height: 45px;
+    padding: 0 15px;
+    font-size: 1rem;
+    background-color: #505050;
+    color: #f1f1f1;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#usuario:hover,
+#contraseña:hover,
+#usuario:focus,
+#contraseña:focus {
+    background-color: #5e5e5e;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    transform: scale(1.01);
+}
+
+#usuario::placeholder,
+#contraseña::placeholder {
+    color: #e3e3e3;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 20px;
+}
+
+/* === OJITO DE CONTRASEÑA === */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#contraseña {
+    width: 100%;
+    padding-right: 48px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* sin animaciones ni efectos de transición */
+.password-toggle svg {
+    transition: none !important;
+}
+
+.password-toggle:hover,
+.password-toggle:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+    outline: none;
+}
+
+/* evita que el ojito herede el hover del botón principal */
+.password-toggle:active {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* BOTON DE FORMULARIO */
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+button {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    background: #282828;
+    color: #176c91;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+    transform: translateX(2.5em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+    transform: translateX(6em);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+.contenedor-del-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282828;
+}
+
+.dashboard {
+    display: flex;
+    gap: 5rem;
+}
+
+.link-tarjeta {
+    text-decoration: none;
+}
+
+/* estilos base compartidos */
+.contenedor-registrar-cliente,
+.contenedor-vizualizar-datos {
+    width: 600px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: #636363;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    color: #eaeaea;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* sombra hacia la izquierda */
+.contenedor-registrar-cliente {
+    box-shadow: -5px 3px 15px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: -5px 3px 15px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -5px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* sombra hacia la derecha */
+.contenedor-vizualizar-datos {
+    box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* hover leve, mantiene dirección */
+.contenedor-registrar-cliente:hover {
+    transform: scale(1.02);
+    box-shadow: -7px 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+.contenedor-vizualizar-datos:hover {
+    transform: scale(1.02);
+    box-shadow: 7px 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+.img-dashboard {
+    width: 60%;
+}
+
+.contenedor-logout {
+    display: flex;
+    justify-content: flex-end;
+    width: 68%;
+}
+
+.salir {
+    color: #aa6713;
+    font-size: 35px;
+}
+
+.titulo-tarjetas-dashboard {
+    font-family: "Gabarito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.contenedor-formulario-clientes {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contenedor-back {
+    display: flex;
+    width: 80%;
+}
+
+.formulario-clientes {
+    display: flex;
+    border-radius: 10px;
+    background-color: #636363;
+    box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.61);
+    -webkit-box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 5px 3px 15px 0px rgba(0, 0, 0, 0.61);
+    gap: 2rem;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.formulario-cliente {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.formulario-editar-cliente {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.label-inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 0.5rem;
+}
+
+.label-inputs label {
+    font-family: "Gabarito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: black;
+}
+
+#razonSocial,
+#cuit,
+#telefono,
+#mail {
+    border: none;
+    border-radius: 8px;
+    height: 45px;
+    padding: 0 15px;
+    font-size: 1rem;
+    background-color: #d0d0d0;
+    color: #176c91;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 20px;
+}
+
+#razonSocial:hover,
+#cuit:hover,
+#razonSocial:focus,
+#cuit:focus,
+#telefono:hover,
+#telefono:focus,
+#mail:hover,
+#mail:focus {
+    background-color: #c5c5c5;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    transform: scale(1.01);
+}
+
+.contenedor-boton-formulario {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-boton-formulario-editar {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lado-izquierdo {
+    width: 35%;
+}
+
+.lado-derecho {
+    display: flex;
+    justify-content: center;
+}
+
+.imgCargaDatos {
+    width: 50%;
+}
+
+.buttonFormulario {
+    width: 250px;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.contenedor-titulo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.titulo {
+    font-family: "Gabarito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    font-size: 100px;
+    letter-spacing: 2px;
+}
+
+.contenedor-tabla-clientes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    background-color: #282828;
+}
+
+.contenedor-buscador {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    background-color: #1f1f1f;
+    /* mismo fondo oscuro del dashboard */
+    margin: 0 auto;
+    margin-top: 4rem;
+    border-radius: 9px;
+}
+
+.elementos-buscador {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Botón de volver */
+.contenedor-back {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Buscador */
+.buscador-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 250px;
+    gap: 10px;
+}
+
+#buscador {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    height: 45px;
+    padding: 0 40px 0 15px;
+    /* espacio para el icono */
+    background-color: #e5e5e5;
+    color: #1c1c1c;
+    outline: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#buscador:hover,
+#buscador:focus {
+    background-color: #d6d6d6;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    transform: scale(1.01);
+}
+
+#buscador::placeholder {
+    color: #1c1c1c;
+    letter-spacing: 1px;
+}
+
+/* ícono lupa dentro del input */
+.icono-buscar {
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+.buscador-wrapper:focus-within .icono-buscar {
+    transform: scale(1.1);
+    fill: #ffffff;
+    /* cambia de color cuando el input está en foco */
+}
+
+/* icono de lupa */
+.icono-buscar {
+    position: absolute;
+    right: 12px;
+    pointer-events: none;
+    /* no bloquea el clic dentro del input */
+}
+
+/* tabla */
+.tabla-clientes {
+    width: 100%;
+    background-color: #f3f3f3;
+    font-family: "Titillium Web", sans-serif;
+    border: 1px solid #444;
+}
+
+/* encabezado */
+.tabla-clientes thead {
+    background-color: #137caa;
+    /* nuevo color de encabezado */
+    position: sticky;
+    top: 0;
+    background-color: #137caa;
+    /* mismo color azul del header */
+    z-index: 10;
+    /* asegura que quede encima del contenido */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.color-editar {
+    background-color: #aa6713;
+}
+
+.color-eliminar {
+    background-color: #c34d4b;
+}
+
+.tabla-clientes th {
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: 1px solid #2a2a2a;
+    font-size: 30px;
+}
+
+/* celdas */
+.tabla-clientes td {
+    padding: 0.8rem 1rem;
+    border: 1px solid #b9b9b9;
+    color: inherit;
+    /* ⬅️ antes era #1c1c1c */
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.icono-copiar {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.icono-copiar:hover {
+    transform: scale(1.2);
+}
+
+.mensaje-copiado {
+    display: inline-block;
+    margin-left: 8px;
+    color: #ec9929;
+    font-weight: 700;
+    font-size: 0.9rem;
+    animation: fadeOut 1.2s ease forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.icono-editar {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.icono-editar:hover {
+    transform: scale(1.15);
+}
+
+/* alterna color de filas */
+.tabla-clientes tr:nth-child(even) {
+    background-color: #dcdcdc;
+}
+
+/* hover fila */
+.tabla-clientes tr:hover {
+    background-color: #176c91;
+    color: #fff;
+    /* ⬅️ este color ahora se propaga a todos los hijos */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Íconos dentro de la tabla */
+.tabla-cuit svg,
+td svg {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    fill: currentColor;
+    /* ⬅️ los íconos ahora heredan el color del texto */
+}
+
+/* centrado del ícono editar */
+td:last-child {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* efecto hover */
+.tabla-cuit svg:hover,
+td svg:hover {
+    transform: scale(1.2);
+}
+
+/* texto CUIT */
+.cuit-text,
+.mail-text {
+    font-weight: 600;
+    color: inherit;
+    /* ⬅️ aseguramos que herede el color del hover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.tabla-razonSocial {
+    text-transform: uppercase;
+    text-align: start !important;
+}
+
+.color-strong {
+    color: #a05f87;
+}
+
+/* 🔹 Contenedor general de la tabla */
+.contenedor-tabla-clientes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    background-color: #282828;
+}
+
+/* 🔹 NUEVO: contenedor que limita el alto y agrega scroll */
+.scroll-tabla-clientes {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-height: 58vh;
+    /* ajustá según prefieras */
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 🔹 Scroll personalizado */
+.scroll-tabla-clientes::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-tabla-clientes::-webkit-scrollbar-track {
+    background: #1f1f1f;
+    border-radius: 10px;
+}
+
+.scroll-tabla-clientes::-webkit-scrollbar-thumb {
+    background-color: #885477;
+    border-radius: 10px;
+}
+
+.scroll-tabla-clientes::-webkit-scrollbar-thumb:hover {
+    background-color: #bf87ab;
+}
+
+.scroll-tabla-clientes.scrolled thead {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+    transform: scale(1.01);
+}
+
+/* LOADER */
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.loader-container.fade-out {
+    opacity: 0;
+    transform: scale(0.97);
+}
+
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282828;
+    /* fondo suave */
+}
+
+.loader {
+    width: 100px;
+    height: 95px;
+    background: linear-gradient(#0000 calc(1 * 100% / 6),
+            #ea9a27 0 calc(3 * 100% / 6),
+            #0000 0),
+        linear-gradient(#0000 calc(2 * 100% / 6),
+            #137caa 0 calc(4 * 100% / 6),
+            #0000 0),
+        linear-gradient(#0000 calc(3 * 100% / 6),
+            #ea9a27 0 calc(5 * 100% / 6),
+            #0000 0);
+    background-size: 10px 400%;
+    background-repeat: no-repeat;
+    animation: matrix 1s infinite linear;
+}
+
+@keyframes matrix {
+    0% {
+        background-position: 0% 100%, 50% 100%, 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%, 50% 0%, 100% 0%;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1919.98px) {
+    .contenedor-del-inicio {
+        height: 100vh;
+    }
+
+    .titulo {
+        font-size: 80px;
+    }
+
+    .contenedor-buscador {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 1920px) and (min-width: 1200px) {
+    .contenedor-del-formulario {
+        height: 80%;
+    }
+    .formulario{
+        width: 60%;
+    }
+    .body-form{
+        margin-top: 2rem;
+    }
+    .imagen-logo{
+        width: 30%;
+    }
+    .contenedor-logout{
+        width: 86% ;
+    }
+
+    .contenedor-formulario-clientes{
+        gap: 1rem;
+    }
+    .lado-izquierdo{
+        width: 60%;
+    }
+    .imgCargaDatos{
+        width: 70%;
+    }
+    .titulo{
+        font-size: 85px;
+    }
+    .contenedor-buscador{
+        margin-top: 1rem;
+    }
+    .scroll-tabla-clientes{
+        max-height: 55vh;
+    }
+    .tabla-clientes th{
+        font-size: 18px;
+    }
+    .tabla-clientes td{
+        font-size: 19px;
+        padding: .2rem .2rem;
+    }
+        .icono-editar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icono-eliminar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .contenedor-del-formulario {
+        height: 75%;
+    }
+
+    .imagen-logo {
+        margin-top: 1rem;
+    }
+
+    .dashboard {
+        gap: 1.5rem;
+    }
+
+    .contenedor-registrar-cliente,
+    .contenedor-vizualizar-datos {
+        width: 500px;
+        height: 500px;
+    }
+
+    .contenedor-logout {
+        width: 89%;
+    }
+
+    .lado-izquierdo {
+        width: 40%;
+    }
+
+    .imgCargaDatos {
+        width: 65%;
+    }
+
+    .titulo {
+        font-size: 90px;
+    }
+
+    .contenedor-buscador {
+        margin-top: 2.3rem;
+    }
+
+    .tabla-clientes th {
+        font-size: 25px;
+    }
+
+    .tabla-clientes td {
+        font-size: 16px;
+    }
+
+    .icono-editar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icono-eliminar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .contenedor-del-formulario {
+        height: 75%;
+    }
+
+    .imagen-logo {
+        margin-top: 2rem;
+    }
+
+    .formulario {
+        width: 80%;
+    }
+
+    .dashboard {
+        gap: 1rem;
+    }
+
+    /* estilos base compartidos */
+    .contenedor-registrar-cliente,
+    .contenedor-vizualizar-datos {
+        width: 350px;
+        height: 350px;
+    }
+
+    .titulo-tarjetas-dashboard {
+        font-size: 30px;
+    }
+
+    .contenedor-logout {
+        width: 98%;
+    }
+
+    .salir {
+        font-size: 23px;
+    }
+
+    button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .lado-izquierdo {
+        width: 50%;
+    }
+
+    .label-inputs {
+        padding: 1.3rem;
+    }
+
+    .formulario-clientes {
+        width: 90%;
+    }
+
+    .buttonFormulario {
+        width: 200px;
+        font-size: 20px;
+        padding: 0.5rem 2rem;
+    }
+
+    .imgCargaDatos {
+        width: 90%;
+    }
+
+    .contenedor-back {
+        width: 90%;
+    }
+
+    .titulo {
+        font-size: 80px;
+    }
+
+    .contenedor-buscador {
+        margin-top: 2rem;
+    }
+
+    .tabla-clientes th {
+        font-size: 17px;
+        padding: 0.5rem;
+    }
+
+    .tabla-clientes td {
+        font-size: 12px;
+        padding: 0.2rem 0.2rem;
+    }
+
+    .icono-editar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .icono-eliminar {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 640px) {
+    .contenedor-del-formulario {
+        width: 100%;
+        height: 70%;
+    }
+
+    .formulario {
+        width: 80%;
+    }
+
+    .imagen-logo {
+        margin-top: 1rem;
+    }
+
+    .dashboard {
+        gap: 1rem;
+    }
+
+    /* estilos base compartidos */
+    .contenedor-registrar-cliente,
+    .contenedor-vizualizar-datos {
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        background-color: #636363;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        justify-content: center;
+        color: #eaeaea;
+        letter-spacing: 1px;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .titulo-tarjetas-dashboard {
+        font-size: 25px;
+    }
+
+    .img-dashboard {
+        width: 55%;
+    }
+
+    .contenedor-logout {
+        width: 100%;
+    }
+
+    .salir {
+        font-size: 25px;
+    }
+
+    button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contenedor-back {
+        width: 92%;
+    }
+
+    .contenedor-formulario-clientes {
+        gap: 1rem;
+    }
+
+    .formulario-clientes {
+        width: 90%;
+    }
+
+    .lado-izquierdo {
+        width: 50%;
+    }
+
+    .buttonFormulario {
+        padding: 0.5rem 0.5rem;
+        width: 150px;
+        font-size: 17px;
+    }
+
+    .imgCargaDatos {
+        width: 80%;
+    }
+
+    #razonSocial,
+    #cuit,
+    #telefono,
+    #mail {
+        font-size: 15px;
+    }
+
+    .label-inputs {
+        padding: 1rem;
+    }
+
+    .label-inputs label {
+        font-size: 20px;
+    }
+
+    .titulo {
+        font-size: 60px;
+    }
+
+    .contenedor-buscador {
+        margin-top: 1rem;
+        padding: 0.5rem;
+    }
+
+    .buscador-wrapper {
+        width: 280px;
+        gap: 0.2rem;
+    }
+
+    .contenedor-tabla-clientes {
+        padding: 1.5rem 0;
+    }
+
+    .tabla-clientes th {
+        padding: 0.5rem;
+        font-size: 14px;
+    }
+
+    .tabla-clientes td {
+        padding: 0.1rem 0.1rem;
+        font-size: 10px;
+    }
+
+    .icono-editar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .icono-eliminar {
+        width: 35px;
+        height: 35px;
+    }
 }
