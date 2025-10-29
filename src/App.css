@@ -775,227 +775,6 @@ td svg:hover {
     }
 }
 
-@media (min-width: 1400px) and (max-width: 1919.98px) {
-    .contenedor-del-inicio {
-        height: 100vh;
-    }
-
-    .titulo {
-        font-size: 80px;
-    }
-
-    .contenedor-buscador {
-        margin-top: 3rem;
-    }
-}
-
-@media (max-width: 1920px) and (min-width: 1200px) {
-    .contenedor-del-formulario {
-        height: 80%;
-    }
-    .formulario{
-        width: 60%;
-    }
-    .body-form{
-        margin-top: 2rem;
-    }
-    .imagen-logo{
-        width: 30%;
-    }
-    .contenedor-logout{
-        width: 86% ;
-    }
-
-    .contenedor-formulario-clientes{
-        gap: 1rem;
-    }
-    .lado-izquierdo{
-        width: 60%;
-    }
-    .imgCargaDatos{
-        width: 70%;
-    }
-    .titulo{
-        font-size: 85px;
-    }
-    .contenedor-buscador{
-        margin-top: 1rem;
-    }
-    .scroll-tabla-clientes{
-        max-height: 55vh;
-    }
-    .tabla-clientes th{
-        font-size: 18px;
-    }
-    .tabla-clientes td{
-        font-size: 19px;
-        padding: .2rem .2rem;
-    }
-        .icono-editar {
-        width: 40px;
-        height: 40px;
-    }
-
-    .icono-eliminar {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (min-width: 1200px) and (max-width: 1399.98px) {
-    .contenedor-del-formulario {
-        height: 75%;
-    }
-
-    .imagen-logo {
-        margin-top: 1rem;
-    }
-
-    .dashboard {
-        gap: 1.5rem;
-    }
-
-    .contenedor-registrar-cliente,
-    .contenedor-vizualizar-datos {
-        width: 500px;
-        height: 500px;
-    }
-
-    .contenedor-logout {
-        width: 89%;
-    }
-
-    .lado-izquierdo {
-        width: 40%;
-    }
-
-    .imgCargaDatos {
-        width: 65%;
-    }
-
-    .titulo {
-        font-size: 90px;
-    }
-
-    .contenedor-buscador {
-        margin-top: 2.3rem;
-    }
-
-    .tabla-clientes th {
-        font-size: 25px;
-    }
-
-    .tabla-clientes td {
-        font-size: 16px;
-    }
-
-    .icono-editar {
-        width: 40px;
-        height: 40px;
-    }
-
-    .icono-eliminar {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1199.98px) {
-    .contenedor-del-formulario {
-        height: 75%;
-    }
-
-    .imagen-logo {
-        margin-top: 2rem;
-    }
-
-    .formulario {
-        width: 80%;
-    }
-
-    .dashboard {
-        gap: 1rem;
-    }
-
-    /* estilos base compartidos */
-    .contenedor-registrar-cliente,
-    .contenedor-vizualizar-datos {
-        width: 350px;
-        height: 350px;
-    }
-
-    .titulo-tarjetas-dashboard {
-        font-size: 30px;
-    }
-
-    .contenedor-logout {
-        width: 98%;
-    }
-
-    .salir {
-        font-size: 23px;
-    }
-
-    button svg {
-        width: 30px;
-        height: 30px;
-    }
-
-    .lado-izquierdo {
-        width: 50%;
-    }
-
-    .label-inputs {
-        padding: 1.3rem;
-    }
-
-    .formulario-clientes {
-        width: 90%;
-    }
-
-    .buttonFormulario {
-        width: 200px;
-        font-size: 20px;
-        padding: 0.5rem 2rem;
-    }
-
-    .imgCargaDatos {
-        width: 90%;
-    }
-
-    .contenedor-back {
-        width: 90%;
-    }
-
-    .titulo {
-        font-size: 80px;
-    }
-
-    .contenedor-buscador {
-        margin-top: 2rem;
-    }
-
-    .tabla-clientes th {
-        font-size: 17px;
-        padding: 0.5rem;
-    }
-
-    .tabla-clientes td {
-        font-size: 12px;
-        padding: 0.2rem 0.2rem;
-    }
-
-    .icono-editar {
-        width: 35px;
-        height: 35px;
-    }
-
-    .icono-eliminar {
-        width: 35px;
-        height: 35px;
-    }
-}
-
 @media (max-width: 640px) {
     .contenedor-del-formulario {
         width: 100%;
@@ -1132,3 +911,247 @@ td svg:hover {
         height: 35px;
     }
 }
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .contenedor-del-formulario {
+        height: 75%;
+    }
+
+    .imagen-logo {
+        margin-top: 2rem;
+    }
+
+    .formulario {
+        width: 80%;
+    }
+
+    .dashboard {
+        gap: 1rem;
+    }
+
+    /* estilos base compartidos */
+    .contenedor-registrar-cliente,
+    .contenedor-vizualizar-datos {
+        width: 350px;
+        height: 350px;
+    }
+
+    .titulo-tarjetas-dashboard {
+        font-size: 30px;
+    }
+
+    .contenedor-logout {
+        width: 98%;
+    }
+
+    .salir {
+        font-size: 23px;
+    }
+
+    button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .lado-izquierdo {
+        width: 50%;
+    }
+
+    .label-inputs {
+        padding: 1.3rem;
+    }
+
+    .formulario-clientes {
+        width: 90%;
+    }
+
+    .buttonFormulario {
+        width: 200px;
+        font-size: 20px;
+        padding: 0.5rem 2rem;
+    }
+
+    .imgCargaDatos {
+        width: 90%;
+    }
+
+    .contenedor-back {
+        width: 90%;
+    }
+
+    .titulo {
+        font-size: 80px;
+    }
+
+    .contenedor-buscador {
+        margin-top: 2rem;
+    }
+
+    .tabla-clientes th {
+        font-size: 17px;
+        padding: 0.5rem;
+    }
+
+    .tabla-clientes td {
+        font-size: 12px;
+        padding: 0.2rem 0.2rem;
+    }
+
+    .icono-editar {
+        width: 35px;
+        height: 35px;
+    }
+
+    .icono-eliminar {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (min-width: 950px) and (max-width: 1050px){
+    .contenedor-del-formulario{
+        height: 80%;
+    }
+    .imagen-logo{
+        width: 30%;
+    }
+    .body-form{
+        margin-top: 2rem;
+    }
+    .footer-form{
+        margin: 70px;
+    }
+    .contenedor-logout{
+        width: 75%;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .contenedor-del-formulario {
+        height: 75%;
+    }
+
+    .imagen-logo {
+        margin-top: 1rem;
+    }
+
+    .dashboard {
+        gap: 1.5rem;
+    }
+
+    .contenedor-registrar-cliente,
+    .contenedor-vizualizar-datos {
+        width: 500px;
+        height: 500px;
+    }
+
+    .contenedor-logout {
+        width: 89%;
+    }
+
+    .lado-izquierdo {
+        width: 40%;
+    }
+
+    .imgCargaDatos {
+        width: 65%;
+    }
+
+    .titulo {
+        font-size: 90px;
+    }
+
+    .contenedor-buscador {
+        margin-top: 2.3rem;
+    }
+
+    .tabla-clientes th {
+        font-size: 25px;
+    }
+
+    .tabla-clientes td {
+        font-size: 16px;
+    }
+
+    .icono-editar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icono-eliminar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1919.98px) {
+    .contenedor-del-inicio {
+        height: 100vh;
+    }
+
+    .titulo {
+        font-size: 80px;
+    }
+
+    .contenedor-buscador {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 1920px) and (min-width: 1200px) {
+    .contenedor-del-formulario {
+        height: 80%;
+    }
+    .formulario{
+        width: 60%;
+    }
+    .body-form{
+        margin-top: 2rem;
+    }
+    .imagen-logo{
+        width: 30%;
+    }
+    .contenedor-logout{
+        width: 86% ;
+    }
+
+    .contenedor-formulario-clientes{
+        gap: 1rem;
+    }
+    .lado-izquierdo{
+        width: 60%;
+    }
+    .imgCargaDatos{
+        width: 70%;
+    }
+    .titulo{
+        font-size: 85px;
+    }
+    .contenedor-buscador{
+        margin-top: 1rem;
+    }
+    .scroll-tabla-clientes{
+        max-height: 55vh;
+    }
+    .tabla-clientes th{
+        font-size: 18px;
+    }
+    .tabla-clientes td{
+        font-size: 19px;
+        padding: .2rem .2rem;
+    }
+        .icono-editar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icono-eliminar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+
+
+
