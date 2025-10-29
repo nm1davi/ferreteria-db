@@ -778,7 +778,7 @@ td svg:hover {
 @media (max-width: 640px) {
     .contenedor-del-formulario {
         width: 100%;
-        height: 70%;
+        height: 80%;
     }
 
     .formulario {
@@ -912,13 +912,14 @@ td svg:hover {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .contenedor-del-formulario {
-        height: 75%;
+        height: 85%;
     }
 
     .imagen-logo {
-        margin-top: 2rem;
+        margin-top: 1rem;
+        width: 35%;
     }
 
     .formulario {
@@ -953,12 +954,23 @@ td svg:hover {
         height: 30px;
     }
 
+    .volver svg{
+        width: 60px;
+        height: 60px;
+    }
+    .contenedor-formulario-clientes{
+        gap: .5rem;
+    }
     .lado-izquierdo {
         width: 50%;
     }
 
     .label-inputs {
-        padding: 1.3rem;
+        padding: 1rem;
+    }
+
+    .label-inputs label{
+        font-size: 22px;
     }
 
     .formulario-clientes {
@@ -980,11 +992,11 @@ td svg:hover {
     }
 
     .titulo {
-        font-size: 80px;
+        font-size: 70px;
     }
 
     .contenedor-buscador {
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 
     .tabla-clientes th {
@@ -1006,9 +1018,12 @@ td svg:hover {
         width: 35px;
         height: 35px;
     }
+    .scroll-tabla-clientes{
+        max-height: 55vh;
+    }
 }
 
-@media (min-width: 950px) and (max-width: 1050px){
+@media (min-width: 875px) and (max-width: 1399.98px){
     .contenedor-del-formulario{
         height: 80%;
     }
@@ -1026,7 +1041,7 @@ td svg:hover {
     }
 }
 
-@media (min-width: 1200px) and (max-width: 1399.98px) {
+/* @media (min-width: 1200px) and (max-width: 1399.98px) {
     .contenedor-del-formulario {
         height: 75%;
     }
@@ -1082,7 +1097,7 @@ td svg:hover {
         width: 40px;
         height: 40px;
     }
-}
+} */
 
 @media (min-width: 1400px) and (max-width: 1919.98px) {
     .contenedor-del-inicio {

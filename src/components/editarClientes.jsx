@@ -128,7 +128,7 @@ const EditarClientes = () => {
     return (
         <div className="contenedor-formulario-clientes">
             <Link className="contenedor-back" to="/visualizar-clientes">
-                <span>
+                <span className="volver">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="96"
