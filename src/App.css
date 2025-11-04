@@ -580,6 +580,14 @@ button:active {
     font-size: 18px;
 }
 
+.tabla-clientes td:first-child {
+    text-transform: uppercase;
+}
+
+.tabla-clientes td:nth-child(4) {
+    text-transform: uppercase;
+}
+
 .icono-copiar {
     cursor: pointer;
     transition: transform 0.2s ease;
