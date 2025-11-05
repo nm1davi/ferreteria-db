@@ -12,20 +12,20 @@ const VisualizarCliente = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-    const contenedor = document.querySelector(".scroll-tabla-clientes");
-    if (!contenedor) return;
+        const contenedor = document.querySelector(".scroll-tabla-clientes");
+        if (!contenedor) return;
 
-    const handleScroll = () => {
-        if (contenedor.scrollTop > 0) {
-            contenedor.classList.add("scrolled");
-        } else {
-            contenedor.classList.remove("scrolled");
-        }
-    };
+        const handleScroll = () => {
+            if (contenedor.scrollTop > 0) {
+                contenedor.classList.add("scrolled");
+            } else {
+                contenedor.classList.remove("scrolled");
+            }
+        };
 
-    contenedor.addEventListener("scroll", handleScroll);
-    return () => contenedor.removeEventListener("scroll", handleScroll);
-}, []);
+        contenedor.addEventListener("scroll", handleScroll);
+        return () => contenedor.removeEventListener("scroll", handleScroll);
+    }, []);
 
     // ✅ Estilos memorizados (evitan warnings)
     const toastEstiloOk = useMemo(
@@ -60,12 +60,21 @@ const VisualizarCliente = () => {
                 id: doc.id,
                 ...doc.data(),
             }));
+
+            // ✅ Ordenar A → Z por "Razon Social"
+            lista.sort((a, b) => {
+                const r1 = a["Razon Social"]?.toLowerCase() || "";
+                const r2 = b["Razon Social"]?.toLowerCase() || "";
+                return r1.localeCompare(r2);
+            });
+
             setClientes(lista);
         } catch (error) {
             console.error("Error al obtener los clientes:", error);
             toast.error("Error al cargar los clientes 😕", toastEstiloError);
         }
     }, [toastEstiloError]);
+
 
     useEffect(() => {
         obtenerClientes();

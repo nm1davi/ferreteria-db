@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { collection, getDocs, setDoc, doc } from "firebase/firestore";
+import { collection, getDocs, setDoc, doc, query, where } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import { toast } from "react-toastify";
 
@@ -48,11 +48,34 @@ const RegistrarCliente = () => {
     };
 
     // 🔹 Enviar formulario
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        if (!formData.razonSocial.trim() || !formData.cuit.trim() || formData.telefono === "") {
-            toast.error("Completá todos los campos obligatorios ⚠️", {
+    if (!formData.razonSocial.trim() || !formData.cuit.trim() || formData.telefono === "") {
+        toast.error("Completá todos los campos obligatorios ⚠️", {
+            style: {
+                background: "#8c7257",
+                color: "#ffebcc",
+                fontFamily: "Titillium Web, sans-serif",
+                fontWeight: "600",
+            },
+        });
+        return;
+    }
+
+    setLoading(true);
+
+    try {
+        // ✅ Validar CUIT único
+        const q = query(
+            collection(db, "CLIENTES"),
+            where("Cuit", "==", Number(formData.cuit))
+        );
+
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+            toast.error("⚠️ Este CUIT ya está registrado", {
                 style: {
                     background: "#8c7257",
                     color: "#ffebcc",
@@ -60,44 +83,46 @@ const RegistrarCliente = () => {
                     fontWeight: "600",
                 },
             });
+            setLoading(false);
             return;
         }
 
+        // ✅ Crear nuevo cliente
         const nuevoId = `Cliente${ultimoNumero + 1}`;
-        setLoading(true);
 
-        try {
-            await setDoc(doc(db, "CLIENTES", nuevoId), {
-                "Razon Social": formData.razonSocial.trim(),
-                "Cuit": Number(formData.cuit),
-                "Telefono": Number(formData.telefono),
-                "Mail": formData.mail.trim()
-            });
+        await setDoc(doc(db, "CLIENTES", nuevoId), {
+            "Razon Social": formData.razonSocial.trim(),
+            "Cuit": Number(formData.cuit),
+            "Telefono": Number(formData.telefono),
+            "Mail": formData.mail.trim()
+        });
 
-            toast.success("✅ Registro de cliente exitoso", {
-                style: {
-                    background: "#ffebcc",
-                    color: "#137CAA",
-                    fontFamily: "Titillium Web, sans-serif",
-                    fontWeight: "600",
-                },
-            });
+        toast.success("✅ Registro de cliente exitoso", {
+            style: {
+                background: "#ffebcc",
+                color: "#137CAA",
+                fontFamily: "Titillium Web, sans-serif",
+                fontWeight: "600",
+            },
+        });
 
-            setTimeout(() => navigate("/visualizar-clientes"), 1500);
-        } catch (error) {
-            console.error("Error al registrar cliente:", error);
-            toast.error("❌ Error al registrar. Vuelva a intentarlo.", {
-                style: {
-                    background: "#8c7257",
-                    color: "#ffebcc",
-                    fontFamily: "Titillium Web, sans-serif",
-                    fontWeight: "600",
-                },
-            });
-        } finally {
-            setLoading(false);
-        }
-    };
+        setTimeout(() => navigate("/visualizar-clientes"), 1500);
+
+    } catch (error) {
+        console.error("Error al registrar cliente:", error);
+        toast.error("❌ Error al registrar. Vuelva a intentarlo.", {
+            style: {
+                background: "#8c7257",
+                color: "#ffebcc",
+                fontFamily: "Titillium Web, sans-serif",
+                fontWeight: "600",
+            },
+        });
+    } finally {
+        setLoading(false);
+    }
+};
+
 
     return (
         <div className="contenedor-formulario-clientes">
