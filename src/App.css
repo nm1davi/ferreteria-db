@@ -666,7 +666,8 @@ td svg:hover {
 
 /* texto CUIT */
 .cuit-text,
-.mail-text {
+.mail-text,
+.telefono-text {
     font-weight: 600;
     color: inherit;
     /* ⬅️ aseguramos que herede el color del hover */
@@ -674,6 +675,20 @@ td svg:hover {
     justify-content: center;
     align-items: center;
     gap: 5px;
+}
+
+.icono-whatsapp {
+    margin-left: 2px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.icono-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.icono-whatsapp{
+    display: flex;
 }
 
 .tabla-razonSocial {
@@ -962,13 +977,15 @@ td svg:hover {
         height: 30px;
     }
 
-    .volver svg{
+    .volver svg {
         width: 60px;
         height: 60px;
     }
-    .contenedor-formulario-clientes{
+
+    .contenedor-formulario-clientes {
         gap: .5rem;
     }
+
     .lado-izquierdo {
         width: 50%;
     }
@@ -977,7 +994,7 @@ td svg:hover {
         padding: 1rem;
     }
 
-    .label-inputs label{
+    .label-inputs label {
         font-size: 22px;
     }
 
@@ -1026,25 +1043,30 @@ td svg:hover {
         width: 35px;
         height: 35px;
     }
-    .scroll-tabla-clientes{
+
+    .scroll-tabla-clientes {
         max-height: 55vh;
     }
 }
 
-@media (min-width: 875px) and (max-width: 1399.98px){
-    .contenedor-del-formulario{
+@media (min-width: 875px) and (max-width: 1399.98px) {
+    .contenedor-del-formulario {
         height: 80%;
     }
-    .imagen-logo{
+
+    .imagen-logo {
         width: 30%;
     }
-    .body-form{
+
+    .body-form {
         margin-top: 2rem;
     }
-    .footer-form{
+
+    .footer-form {
         margin: 70px;
     }
-    .contenedor-logout{
+
+    .contenedor-logout {
         width: 75%;
     }
 }
@@ -1125,45 +1147,57 @@ td svg:hover {
     .contenedor-del-formulario {
         height: 80%;
     }
-    .formulario{
+
+    .formulario {
         width: 60%;
-    }
-    .body-form{
-        margin-top: 2rem;
-    }
-    .imagen-logo{
-        width: 30%;
-    }
-    .contenedor-logout{
-        width: 86% ;
     }
 
-    .contenedor-formulario-clientes{
+    .body-form {
+        margin-top: 2rem;
+    }
+
+    .imagen-logo {
+        width: 30%;
+    }
+
+    .contenedor-logout {
+        width: 86%;
+    }
+
+    .contenedor-formulario-clientes {
         gap: 1rem;
     }
-    .lado-izquierdo{
+
+    .lado-izquierdo {
         width: 60%;
     }
-    .imgCargaDatos{
+
+    .imgCargaDatos {
         width: 70%;
     }
-    .titulo{
+
+    .titulo {
         font-size: 85px;
     }
-    .contenedor-buscador{
+
+    .contenedor-buscador {
         margin-top: 1rem;
     }
-    .scroll-tabla-clientes{
+
+    .scroll-tabla-clientes {
         max-height: 55vh;
     }
-    .tabla-clientes th{
+
+    .tabla-clientes th {
         font-size: 18px;
     }
-    .tabla-clientes td{
+
+    .tabla-clientes td {
         font-size: 19px;
         padding: .2rem .2rem;
     }
-        .icono-editar {
+
+    .icono-editar {
         width: 40px;
         height: 40px;
     }
@@ -1173,8 +1207,3 @@ td svg:hover {
         height: 40px;
     }
 }
-
-
-
-
-
