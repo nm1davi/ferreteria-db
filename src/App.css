@@ -687,7 +687,7 @@ td svg:hover {
     transform: scale(1.1);
 }
 
-.icono-whatsapp{
+.icono-whatsapp {
     display: flex;
 }
 
@@ -1071,64 +1071,6 @@ td svg:hover {
     }
 }
 
-/* @media (min-width: 1200px) and (max-width: 1399.98px) {
-    .contenedor-del-formulario {
-        height: 75%;
-    }
-
-    .imagen-logo {
-        margin-top: 1rem;
-    }
-
-    .dashboard {
-        gap: 1.5rem;
-    }
-
-    .contenedor-registrar-cliente,
-    .contenedor-vizualizar-datos {
-        width: 500px;
-        height: 500px;
-    }
-
-    .contenedor-logout {
-        width: 89%;
-    }
-
-    .lado-izquierdo {
-        width: 40%;
-    }
-
-    .imgCargaDatos {
-        width: 65%;
-    }
-
-    .titulo {
-        font-size: 90px;
-    }
-
-    .contenedor-buscador {
-        margin-top: 2.3rem;
-    }
-
-    .tabla-clientes th {
-        font-size: 25px;
-    }
-
-    .tabla-clientes td {
-        font-size: 16px;
-    }
-
-    .icono-editar {
-        width: 40px;
-        height: 40px;
-    }
-
-    .icono-eliminar {
-        width: 40px;
-        height: 40px;
-    }
-} */
-
 @media (min-width: 1400px) and (max-width: 1919.98px) {
     .contenedor-del-inicio {
         height: 100vh;
@@ -1145,7 +1087,7 @@ td svg:hover {
 
 @media (max-width: 1920px) and (min-width: 1200px) {
     .contenedor-del-formulario {
-        height: 80%;
+        height: 90%;
     }
 
     .formulario {
@@ -1177,11 +1119,12 @@ td svg:hover {
     }
 
     .titulo {
-        font-size: 85px;
+        font-size: 80px;
     }
 
     .contenedor-buscador {
-        margin-top: 1rem;
+        margin-top: .5rem;
+        padding: .5rem 0;
     }
 
     .scroll-tabla-clientes {
@@ -1205,5 +1148,24 @@ td svg:hover {
     .icono-eliminar {
         width: 40px;
         height: 40px;
+    }
+
+    .contenedor-registrar-cliente,
+    .contenedor-vizualizar-datos{
+        width: 500px;
+        height: 500px;
+    }
+    .contenedor-logout{
+        width: 82%;
+    }
+    .volver svg{
+        width: 55px;
+        height: 55px;
+    }
+    .label-inputs{
+        padding: 1.3rem;
+    }
+    .contenedor-tabla-clientes{
+        padding: 1.3rem 0;
     }
 }
