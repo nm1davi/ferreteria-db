@@ -1289,8 +1289,8 @@ td svg:hover {
 
     .contenedor-registrar-cliente,
     .contenedor-vizualizar-datos {
-        width: 400px;
-        height: 400px;
+        width: 370px;
+        height: 370px;
     }
 
     .titulo-tarjetas-dashboard {
@@ -1312,5 +1312,8 @@ td svg:hover {
 
     .contenedor-tabla-clientes {
         padding: 1.3rem 0;
+    }
+    .dashboard{
+        gap: 2rem;
     }
 }
