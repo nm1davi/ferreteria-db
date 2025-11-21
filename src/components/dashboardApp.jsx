@@ -30,6 +30,15 @@ const DashboardApp = () => {
                         </h2>
                     </div>
                 </Link>
+                {/* Tarjeta 3 */}
+                <Link to="/enviar-mensaje" className="link-tarjeta">
+                    <div className="contenedor-vizualizar-datos">
+                        <img className="img-dashboard" src="/EnviarMensaje.png" alt="Envio de mensaje" />
+                        <h2 className="titulo-tarjetas-dashboard">
+                            ENVIAR WHATSAPP
+                        </h2>
+                    </div>
+                </Link>
             </div>
             <div className="contenedor-logout">
                 <button id="btn-logout" className="boton-logout" onClick={handleLogout}>

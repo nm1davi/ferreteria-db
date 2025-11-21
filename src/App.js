@@ -5,6 +5,7 @@ import DashboardApp from './components/dashboardApp';
 import RegistrarCliente from './components/registrarCliente';
 import VisualizarCliente from './components/visualizarCliente';
 import EditarClientes from './components/editarClientes';
+import EnvioDeMensaje from './components/envioDeMensaje';
 import PrivateRoute from './components/priavateRoute';
 import RouteWrapper from './components/routeWrapper';
 import { ToastContainer } from "react-toastify";
@@ -52,6 +53,16 @@ function App() {
             <PrivateRoute>
               <RouteWrapper>
                 <EditarClientes />
+              </RouteWrapper>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='enviar-mensaje'
+          element={
+            <PrivateRoute>
+              <RouteWrapper>
+                <EnvioDeMensaje />
               </RouteWrapper>
             </PrivateRoute>
           }

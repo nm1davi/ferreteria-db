@@ -295,9 +295,22 @@ button:active {
     gap: 2rem;
 }
 
+.contenedor-formulario-whatsapp {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .contenedor-back {
     display: flex;
     width: 80%;
+}
+.contenedor-volver-de-whatsapp {
+    display: flex;
+    width: 30%;
 }
 
 .formulario-clientes {
@@ -788,6 +801,130 @@ td svg:hover {
     animation: matrix 1s infinite linear;
 }
 
+.contenedor-de-input {
+    background: #176C91;
+    background: linear-gradient(180deg, rgba(23, 108, 145, 1) 0%, rgba(27, 93, 122, 1) 41%, rgba(40, 40, 40, 1) 80%);
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    border-radius: 19px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    padding: 7px 0 0;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    font-family: "Titillium Web", sans-serif;
+}
+
+.input-text {
+    font-family: "Titillium Web", sans-serif;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #f8d5a0;
+    border-radius: 0 !important;
+    outline: 0;
+    font-size: 25px;
+    color: #ffffff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    cursor: pointer;
+}
+
+.input-text::placeholder {
+    color: transparent;
+}
+
+.input-text:placeholder-shown~.input-text-label {
+    font-size: 25px;
+    cursor: text;
+}
+
+.input-text-label {
+    position: absolute;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #f8d5a0;
+    pointer-events: none;
+}
+
+.input-text:focus {
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-image: linear-gradient(90deg, rgba(248, 219, 155, 1) 0%, rgba(121, 89, 53, 1) 90%);
+    border-image-slice: 1;
+}
+
+.input-text:focus~.input-text-label {
+    color: #f8d5a0;
+}
+
+.input-text:not(:placeholder-shown)~.input-text-label,
+.input-text:focus~.input-text-label {
+    position: absolute;
+    display: block;
+    transition: 0.2s;
+    font-size: 15px;
+    font-weight: 700;
+    top: -17px;
+}
+
+.input-text:required,
+.input-text:invalid {
+    box-shadow: none;
+}
+
+/* From Uiverse.io by adamgiebl */
+.cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.5em 0.8em 1.2em;
+    color: white;
+    background: linear-gradient(0deg,
+            #6a4c2d 0%,
+            #8d6b42 100%);
+    /* tonos más apagados */
+    border: none;
+    box-shadow: 0 0.4em 1em -0.4em rgba(60, 45, 28, 0.4);
+    /* sombra más mate */
+    letter-spacing: 0.05em;
+    border-radius: 20em;
+}
+
+.cssbuttons-io-button svg {
+    margin-right: 8px;
+}
+
+.cssbuttons-io-button span {
+    font-family: "Inter", sans-serif;
+}
+
+.cssbuttons-io-button:hover {
+    box-shadow: 0 0.3em 0.8em -0.4em rgba(60, 45, 28, 0.45);
+    /* leve pero no brilloso */
+}
+
+.cssbuttons-io-button:active {
+    box-shadow: 0 0.2em 0.6em -0.4em rgba(60, 45, 28, 0.5);
+}
+
+
+
+
+
 @keyframes matrix {
     0% {
         background-position: 0% 100%, 50% 100%, 100% 100%;
@@ -1151,21 +1288,29 @@ td svg:hover {
     }
 
     .contenedor-registrar-cliente,
-    .contenedor-vizualizar-datos{
-        width: 500px;
-        height: 500px;
+    .contenedor-vizualizar-datos {
+        width: 400px;
+        height: 400px;
     }
-    .contenedor-logout{
+
+    .titulo-tarjetas-dashboard {
+        font-size: 35px;
+    }
+
+    .contenedor-logout {
         width: 82%;
     }
-    .volver svg{
+
+    .volver svg {
         width: 55px;
         height: 55px;
     }
-    .label-inputs{
+
+    .label-inputs {
         padding: 1.3rem;
     }
-    .contenedor-tabla-clientes{
+
+    .contenedor-tabla-clientes {
         padding: 1.3rem 0;
     }
 }
