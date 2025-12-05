@@ -80,7 +80,7 @@ const Inicio = () => {
                     </div>
 
                     <div className="footer-form">
-                        <button type="submit">
+                        <button className="boton-movimiento" type="submit">
                             <div className="svg-wrapper-1">
                                 <div className="svg-wrapper">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

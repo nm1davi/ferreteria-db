@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+
+.contenedor-de-impresion {
+  padding: 40px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titulo-impresion-detalle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.contenedor-parrafo-boton {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    min-height: 450px;
+    background-color: rgb(203, 203, 203);
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: none;
+    padding: 1rem;
+}
+
+.contenedor-parrafo-boton p {
+    color: #282828;
+    font-family: "Gabarito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+
+.btn-solicitar-firma {
+    width: 50%;
+    padding: 12px;
+    background: #ffe44b;
+    color: black;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+
+.en-retiro-de-material{
+    margin-bottom: 0;
+    width: 30%;
+}
+
+.btn-solicitar-firma:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+.volver-impresion-pdf {
+    padding: 12px;
+    background: #ffd900;
+    color: black;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    justify-content: center;
+    text-decoration: none;
+}
+.conentedor-boton-volver-descarga-pdf{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: flex-start;
+    width: 60%;
+}

@@ -191,7 +191,7 @@ const VisualizarCliente = () => {
 
             <div className="contenedor-buscador">
                 <div className="elementos-buscador">
-                    <Link className="contenedor-back" to="/dashboard">
+                    <Link className="contenedor-back en-cuentas-corrientes" to="/dashboard">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
                                 <path

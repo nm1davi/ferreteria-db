@@ -1,0 +1,116 @@
+.contenedor-de-todo-en-la-firma {
+    padding: 20px;
+}
+
+.contenedor-titulo-de-la-firma h2 {
+    font-family: "Inter", sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.contenedor-tabla-de-retiro-en-firma {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+    font-family: "Gabarito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.tabla-informacio-cabecera-en-firma {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.td-variable {
+    text-align: end !important;
+}
+
+.titulo-de-items-en-firma {
+    padding: 1rem;
+    text-align: center;
+    color: rgb(199, 129, 0);
+}
+
+.tabla-de-items-en-firma {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 17px;
+}
+
+.tabla-de-items-en-firma th,
+.tabla-de-items-en-firma td {
+    background-color: #8fb8ff;
+    border: 1px solid #444444;
+    padding: 5px;
+}
+
+.td-variable-en-tabla-de-items {
+    text-align: center;
+}
+
+.description {
+    text-align: start;
+}
+
+.iva-en-firma {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 91%;
+}
+
+.total-en-firma-de-retiro {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 93%;
+}
+
+.contenedor-de-la-firma-en-firma {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.firmar-aqui-en-firma {
+    font-family: "Inter", sans-serif;
+    color: #8fb8ff;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.firma-digital {
+    width: 300px;
+    border-radius: 19px;
+}
+
+.contenedor-de-botones-en-firma {
+    display: flex;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+
+.botones-de-firma {
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.59);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.59);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.59);
+}
+
+.borrar{
+    background-color: rgb(255, 163, 163);
+}
+.aceptar{
+    background-color: #c5ffab;
+}
