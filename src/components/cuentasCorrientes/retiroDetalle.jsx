@@ -404,7 +404,7 @@ export default function RetiroDetalle() {
                         <div style={{ margin: "20px 0" }}>
                             <QRCodeCanvas
                                 size={240}
-                                value={`https://ferreteria-db.vercel.app/firmar/${empresaId}/${retiroId}}`}
+                                value={`https://ferreteria-db.vercel.app/firmar/${empresaId}/${retiroId}`}
                             />
                         </div>
 
