@@ -213,96 +213,102 @@ body {
     }
 }
 
+
 .contenedor-del-dashboard {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background-color: #282828;
-}
-
-.dashboard {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 tarjetas por fila */
-    gap: 15px;
-    /* espacio entre tarjetas */
-    justify-items: center;
-    /* centrar tarjetas */
-    margin-top: 10px;
-}
-
-.link-tarjeta {
-    text-decoration: none;
-}
-
-/* estilos base compartidos */
-.contenedor-registrar-cliente,
-.contenedor-vizualizar-datos {
-    width: 400px;
-    height: 360px;
-    border-radius: 10px;
-    background-color: #636363;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    align-items: center;
-    justify-content: center;
-    color: #eaeaea;
-    letter-spacing: 1px;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-image: url("./assets/img/Img-Dashboard2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* sombra hacia la izquierda */
-.contenedor-registrar-cliente {
-    box-shadow: -5px 3px 15px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: -5px 3px 15px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: -5px 3px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* sombra hacia la derecha */
-.contenedor-vizualizar-datos {
-    box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 5px 3px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* hover leve, mantiene dirección */
-.contenedor-registrar-cliente:hover {
-    transform: scale(1.02);
-    box-shadow: -7px 5px 20px rgba(0, 0, 0, 0.6);
-}
-
-.contenedor-vizualizar-datos:hover {
-    transform: scale(1.02);
-    box-shadow: 7px 5px 20px rgba(0, 0, 0, 0.6);
-}
-
-.img-dashboard {
-    width: 60%;
-}
-
-.contenedor-logout {
+/* HEADER */
+.header-dashboard {
+    height: 90px;
     display: flex;
-    justify-content: flex-end;
-    width: 68%;
+    justify-content: end;
+    align-items: center;
+    padding: 0 20px;
 }
 
-.salir {
-    color: #aa6713;
-    font-size: 35px;
+.header-dashboard img {
+    height: 90%;
 }
 
-.titulo-tarjetas-dashboard {
+/* LAYOUT */
+.layout-dashboard {
+    flex: 1;
+    display: flex;
+}
+
+/* ASIDE */
+.aside-dashboard {
+    width: max-content;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    padding-top: 50px;
+}
+
+.aside-dashboard nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 35px 10px;
+    border-radius: 6px;
     font-family: "Gabarito", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
-    font-style: normal;
-    font-size: 35px;
+    color: #52a3ff;
 }
+
+.aside-dashboard nav a:hover {
+    background: #76e0e0;
+    color: #fa8900;
+    box-shadow: 0 0 10px rgba(135, 255, 255, 0.7);
+}
+
+.aside-dashboard nav a {
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* BADGE */
+.item-con-badge {
+    position: relative;
+}
+
+.badge {
+    background: #aa6713;
+    color: #fff;
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-left: 12px;
+}
+
+/* LOGOUT */
+.btn-logout {
+    background: none;
+    color: #aa6713;
+    border: 1px solid #aa6713;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* MAIN */
+.dashboard {
+    flex: 1;
+}
+
 
 .contenedor-formulario-clientes {
     display: flex;
@@ -1471,9 +1477,6 @@ tr {
     font-family: "Titillium Web", sans-serif;
     font-weight: 600;
 }
-
-.badge-retiros-empresa {}
-
 
 /* ========= SOLICITAR FIRMA ========= */
 .modal-qr-backdrop {
