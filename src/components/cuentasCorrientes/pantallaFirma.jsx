@@ -40,42 +40,49 @@ export default function PantallaFirma() {
 
     const borrarFirma = () => padRef.current.clear();
 
-const confirmarFirma = async () => {
-    if (padRef.current.isEmpty()) {
-        alert("Debe firmar antes de confirmar.");
-        return;
-    }
+    const confirmarFirma = async () => {
+        if (padRef.current.isEmpty()) {
+            alert("Debe firmar antes de confirmar.");
+            return;
+        }
 
-    const imagen = padRef.current.toDataURL("image/png");
+        const imagen = padRef.current.toDataURL("image/png");
 
-    const retiroRef = doc(db, "CUENTAS-CORRIENTES", empresaId, "retiros", retiroId);
-    const empresaRef = doc(db, "CUENTAS-CORRIENTES", empresaId);
+        const retiroRef = doc(db, "CUENTAS-CORRIENTES", empresaId, "retiros", retiroId);
+        const empresaRef = doc(db, "CUENTAS-CORRIENTES", empresaId);
 
-    // 🔹 Leer estado anterior
-    const snap = await getDoc(retiroRef);
-    const estadoAnterior = snap.data().estado || "abierto";
+        // 🔹 Leer estado anterior
+        const snap = await getDoc(retiroRef);
+        const estadoAnterior = snap.data().estado || "abierto";
 
-    // 🔹 Guardar firma + estado a-facturar
-    await updateDoc(retiroRef, {
-        firma: imagen,
-        estado: "a-facturar",
-        fechaCierre: serverTimestamp(),
-    });
-
-    // 🔥 SUMAR 1 SOLO si antes NO estaba a-facturar
-    if (estadoAnterior !== "a-facturar") {
-        await updateDoc(empresaRef, {
-            retirosAFacturar: increment(1)
+        // 🔹 Guardar firma + estado a-facturar
+        await updateDoc(retiroRef, {
+            firma: imagen,
+            estado: "a-facturar",
+            fechaCierre: serverTimestamp(),
         });
-    }
 
-    navigate(`/cuentas-corrientes/${empresaId}`);
-};
+        // 🔥 SUMAR 1 SOLO si antes NO estaba a-facturar
+        if (estadoAnterior !== "a-facturar") {
+            await updateDoc(empresaRef, {
+                retirosAFacturar: increment(1)
+            });
+        }
+
+        navigate(`/cuentas-corrientes/${empresaId}`);
+    };
 
 
 
 
     if (!retiro) return <div>Cargando...</div>;
+    const totalGeneral = Number(retiro.totalGeneral ?? 0);
+    const iva21 = totalGeneral * 0.21;
+    const totalMasIva = totalGeneral + iva21;
+
+    const formatoMoneda = (n) =>
+        n.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
 
     return (
         <div className="contenedor-de-todo-en-la-firma">
@@ -144,11 +151,7 @@ const confirmarFirma = async () => {
                         ))}
                     </tbody>
                 </table>
-                <h3 className="iva-en-firma">
-                    + IVA
-                </h3>
                 <h3 className="total-en-firma-de-retiro">
-                    TOTAL:{" "}
                     <span>
                         ${" "}
                         {retiro.totalGeneral?.toLocaleString("es-AR", {
@@ -156,6 +159,14 @@ const confirmarFirma = async () => {
                             maximumFractionDigits: 2
                         })}
                     </span>
+                </h3>
+                <h3 className="iva-en-firma">
+                    + IVA
+                </h3>
+
+                <h3 className="total-mas-iva-en-firma">
+                    TOTAL:{" "}
+                    <span>${" "}{formatoMoneda(totalMasIva)}</span>
                 </h3>
             </div>
 

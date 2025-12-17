@@ -74,6 +74,7 @@ export default function RetiroDetalle() {
             }
         });
 
+
         return () => unsubscribe();
     }, [remitoRef, nombreEmpresa]);
 
@@ -150,6 +151,14 @@ export default function RetiroDetalle() {
 
     const generarPDF = () => {
         const pdf = new jsPDF("p", "pt", "a4");
+
+        const iva21 = Number(totalGeneral ?? 0) * 0.21;
+        const totalMasIva = Number(totalGeneral ?? 0) + iva21;
+
+        const formato = (n) => n.toLocaleString("es-AR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
 
         // ======================
         // 🔥 REGISTRO DE FUENTES
@@ -285,28 +294,31 @@ export default function RetiroDetalle() {
         let y = pdf.lastAutoTable.finalY + 20;
 
         // ==========================
-        // 🔥 + IVA + TOTAL
+        // 🔥 TOTALES
         // ==========================
-        const yIva = pdf.lastAutoTable.finalY + 30;
-        y = pdf.lastAutoTable.finalY + 40;
+        let yTot = pdf.lastAutoTable.finalY + 35;
 
-        const columnaTotalX = pageWidth - 60; // donde está el número TOTAL
-        const columnaTituloX = pageWidth - 200;
+        const columnaTotalX = pageWidth - 60;   // donde va el número
+        const columnaTituloX = pageWidth - 200; // donde va el título
 
-        // +IVA debajo del total unitario
         pdf.setFont("Gabarito", "bold");
-        pdf.text("+IVA", columnaTotalX, yIva, { align: "right" });
 
-        // TOTAL
-        y += 25;
+        // TOTAL GENERAL
+        pdf.text("$ " + formato(totalGeneral), columnaTotalX, yTot, { align: "right" });
 
-        pdf.text("TOTAL", columnaTituloX, y, { align: "right" });
-        pdf.text("$ " + totalGeneral.toLocaleString("es-AR", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        }), columnaTotalX, y, {
-            align: "right",
-        });
+        // + IVA (texto)
+        yTot += 30;
+        pdf.text("+ IVA", columnaTotalX, yTot, { align: "right" });
+
+        // TOTAL + IVA
+        yTot += 30;
+        pdf.text("TOTAL", columnaTituloX, yTot, { align: "right" });
+        pdf.text("$ " + formato(totalMasIva), columnaTotalX, yTot, { align: "right" });
+
+
+        // Si después usabas `y` para la firma, actualizalo:
+        y = yTot;
+
 
         // ======================
         // 🔥 FIRMA + ACLARACIÓN
