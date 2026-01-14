@@ -6,6 +6,7 @@ import Inicio from './components/inicio';
 import DashboardApp from './components/dashboardApp';
 import RegistrarCliente from './components/registrarCliente';
 import VisualizarCliente from './components/visualizarCliente';
+import GenerarFacturas from './components/generarFacturas';
 import EditarClientes from './components/editarClientes';
 import EnvioDeMensaje from './components/envioDeMensaje';
 import CuentasCorrientes from './components/cuentasCorrientes/cuentasCorrientes';
@@ -52,6 +53,17 @@ function App() {
             <PrivateRoute>
               <RouteWrapper>
                 <VisualizarCliente />
+              </RouteWrapper>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path='generar-facturas'
+          element={
+            <PrivateRoute>
+              <RouteWrapper>
+                <GenerarFacturas />
               </RouteWrapper>
             </PrivateRoute>
           }

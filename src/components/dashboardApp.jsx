@@ -38,6 +38,7 @@ const DashboardApp = () => {
                     <nav>
                         <Link to="/registrar-clientes">REGISTRAR CLIENTES</Link>
                         <Link to="/visualizar-clientes">VISUALIZAR CLIENTES</Link>
+                        <Link to="/generar-facturas">GENERAR FACTURAS PDF</Link>
                         <Link to="/enviar-mensaje">ENVIAR WHATSAPP</Link>
 
                         <Link to="/cuentas-corrientes" className="item-con-badge">
